@@ -1,0 +1,22 @@
+                                <td><input type="number" name="attr_rankCoordination" max="6" min="0" value="0" /></td>
+                                <td>
+                                    <input class="sheet-yd" type="hidden" name="attr_yCoordination" value="(((@{agility} + @{rankCoordination}) - abs(@{agility} - @{rankCoordination})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gCoordination" value="((((@{agility} + @{rankCoordination}) + abs(@{agility} - @{rankCoordination})) / 2) - @{yCoordination})" disabled><span></span>
+                                    
+                                <td><input type="number" name="attr_rank(.*?)" max="6" min="0" value="0" /></td>
+                                <td>
+                                    <input class="sheet-yd" type="hidden" name="attr_y(.*?)" value="\(\(\(@{(.*?)} \+ @{rank(.*?)}\) - abs\(@{(.*?)} - @{rank(.*?)}\)\) / 2\)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_g(.*?)" value="\(\(\(\(@{(.*?)} \+ @{rank(.*?)}\) \+ abs\(@{(.*?)} - @{rank(.*?)}\)\) / 2\) - @{y(.*?)}\)" disabled><span></span>
+
+                                <td><input type="number" name="attr_rank$1" max="6" min="0" value="0" /></td>
+                                <td>
+                                    <input class="sheet-yd" type="hidden" name="attr_y$2" value="(((@{$1_characteristic} + @{rank$4}) - abs(@{$1_characteristic} - @{rank$6})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_g$7" value="((((@{$8} + @{rank$1_characteristic}) + abs(@{$1_characteristic} - @{rank$11})) / 2) - @{y$12})" disabled><span></span>
+
+                                <td><input name='attr_careerskill(.*?)' type="checkbox" value="1"></td>
+                                <td>
+                                    <select name="attr_(.*?)_characteristic">
+
+                                <td><input name='attr_careerskill$1' type="checkbox" value="1"></td>
+                                <td>
+                                    <select name="attr_$1_characteristic">
