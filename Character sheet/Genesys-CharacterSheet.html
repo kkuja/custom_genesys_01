@@ -408,7 +408,7 @@
                                 <td><label data-i18n="alchemyint">Alchemy (Int)</label></td>
                                 <td><input name='attr_careerskillAlchemy' type="checkbox" value="1"></td>
                                 <td>
-                                    <select name="attr_alchemy_characteristic">
+                                    <select name="attr_Alchemy_characteristic">
                                         <option value="@{brawn}" data-i18n="brawn">Brawn</option>
                                         <option value="@{agility}" data-i18n="agility">Agility</option>
                                         <option value="@{intellect}" data-i18n="intellect">Intellect</option>
@@ -418,8 +418,8 @@
                                     </select>
                                 </td>                                 <td><input type="number" name="attr_rankAlchemy" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yAlchemy" value="(((@{intellect} + @{rankAlchemy}) - abs(@{intellect} - @{rankAlchemy})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gAlchemy" value="((((@{intellect} + @{rankAlchemy}) + abs(@{intellect} - @{rankAlchemy})) / 2) - @{yAlchemy})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yAlchemy" value="(((@{Alchemy_characteristic} + @{rankAlchemy}) - abs(@{Alchemy_characteristic} - @{rankAlchemy})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gAlchemy" value="((((@{intellect} + @{rankAlchemy_characteristic}) + abs(@{Alchemy_characteristic} - @{rankAlchemy})) / 2) - @{yAlchemy})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -433,7 +433,7 @@
                                 </td>
                                 <td><input name='attr_careerskillAstrogation' type="checkbox" value="1"></td>
                                 <td>
-                                    <select name="attr_astrogation_characteristic">
+                                    <select name="attr_Astrogation_characteristic">
                                         <option value="@{brawn}" data-i18n="brawn">Brawn</option>
                                         <option value="@{agility}" data-i18n="agility">Agility</option>
                                         <option value="@{intellect}" data-i18n="intellect">Intellect</option>
@@ -464,7 +464,7 @@
                                 </td>
                                 <td><input name='attr_careerskillAthletics' type="checkbox" value="1"></td>
                                 <td>
-                                    <select name="attr_athletics_characteristic">
+                                    <select name="attr_Athletics_characteristic">
                                         <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
                                         <option value="@{agility}" data-i18n="agility">Agility</option>
                                         <option value="@{intellect}" data-i18n="intellect">Intellect</option>
@@ -474,8 +474,8 @@
                                     </select>
                                 </td>                                 <td><input type="number" name="attr_rankAthletics" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yAthletics" value="(((@{athletics_characteristic} + @{rankAthletics}) - abs(@{athletics_characteristic} - @{rankAthletics})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gAthletics" value="((((@{athletics_characteristic} + @{rankAthletics}) + abs(@{athletics_characteristic} - @{rankAthletics})) / 2) - @{yAthletics})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yAthletics" value="(((@{Athletics_characteristic} + @{rankAthletics}) - abs(@{Athletics_characteristic} - @{rankAthletics})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gAthletics" value="((((@{athletics_characteristic} + @{rankAthletics_characteristic}) + abs(@{Athletics_characteristic} - @{rankAthletics})) / 2) - @{yAthletics})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -491,7 +491,7 @@
                                 </td>
                                 <td><input name='attr_careerskillComputers' type="checkbox" value="1"></td>
                                 <td>
-                                    <select name="attr_computers_characteristic">
+                                    <select name="attr_Computers_characteristic">
                                         <option value="@{brawn}" data-i18n="brawn">Brawn</option>
                                         <option value="@{agility}" data-i18n="agility">Agility</option>
                                         <option value="@{intellect}" data-i18n="intellect" selected='selected'>Intellect</option>
@@ -501,8 +501,8 @@
                                     </select>
                                 </td>                                 <td><input type="number" name="attr_rankComputers" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yComputers" value="(((@{computers_characteristic} + @{rankComputers}) - abs(@{computers_characteristic} - @{rankComputers})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gComputers" value="((((@{computers_characteristic} + @{rankComputers}) + abs(@{computers_characteristic} - @{rankComputers})) / 2) - @{yComputers})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yComputers" value="(((@{Computers_characteristic} + @{rankComputers}) - abs(@{Computers_characteristic} - @{rankComputers})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gComputers" value="((((@{computers_characteristic} + @{rankComputers_characteristic}) + abs(@{Computers_characteristic} - @{rankComputers})) / 2) - @{yComputers})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -517,11 +517,20 @@
                                     <label data-i18n="coolpr">Cool (Pr)</label>
                                 </td>
                                 <td><input name='attr_careerskillCool' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Cool_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankCool" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yCool" value="(((@{presence} + @{rankCool}) - abs(@{presence} - @{rankCool})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gCool" value="((((@{presence} + @{rankCool}) + abs(@{presence} - @{rankCool})) / 2) - @{yCool})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yCool" value="(((@{Cool_characteristic} + @{rankCool}) - abs(@{Cool_characteristic} - @{rankCool})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gCool" value="((((@{presence} + @{rankCool_characteristic}) + abs(@{Cool_characteristic} - @{rankCool})) / 2) - @{yCool})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -536,11 +545,20 @@
                                     <label data-i18n="coordinationag">Coordination (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillCoordination' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Coordination_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankCoordination" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yCoordination" value="(((@{agility} + @{rankCoordination}) - abs(@{agility} - @{rankCoordination})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gCoordination" value="((((@{agility} + @{rankCoordination}) + abs(@{agility} - @{rankCoordination})) / 2) - @{yCoordination})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yCoordination" value="(((@{Coordination_characteristic} + @{rankCoordination}) - abs(@{Coordination_characteristic} - @{rankCoordination})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gCoordination" value="((((@{agility} + @{rankCoordination_characteristic}) + abs(@{Coordination_characteristic} - @{rankCoordination})) / 2) - @{yCoordination})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -555,11 +573,20 @@
                                     <label data-i18n="disciplinewill">Discipline (Will)</label>
                                 </td>
                                 <td><input name='attr_careerskillDiscipline' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Discipline_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankDiscipline" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yDiscipline" value="(((@{willpower} + @{rankDiscipline}) - abs(@{willpower} - @{rankDiscipline})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gDiscipline" value="((((@{willpower} + @{rankDiscipline}) + abs(@{willpower} - @{rankDiscipline})) / 2) - @{yDiscipline})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yDiscipline" value="(((@{Discipline_characteristic} + @{rankDiscipline}) - abs(@{Discipline_characteristic} - @{rankDiscipline})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gDiscipline" value="((((@{willpower} + @{rankDiscipline_characteristic}) + abs(@{Discipline_characteristic} - @{rankDiscipline})) / 2) - @{yDiscipline})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -574,11 +601,20 @@
                                     <label data-i18n="drivingag">Driving (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillDriving' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Driving_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankDriving" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yDriving" value="(((@{agility} + @{rankDriving}) - abs(@{agility} - @{rankDriving})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gDriving" value="((((@{agility} + @{rankDriving}) + abs(@{agility} - @{rankDriving})) / 2) - @{yDriving})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yDriving" value="(((@{Driving_characteristic} + @{rankDriving}) - abs(@{Driving_characteristic} - @{rankDriving})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gDriving" value="((((@{agility} + @{rankDriving_characteristic}) + abs(@{Driving_characteristic} - @{rankDriving})) / 2) - @{yDriving})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -593,11 +629,20 @@
                                     <label data-i18n="mechanicsint">Mechanics (Int)</label>
                                 </td>
                                 <td><input name='attr_careerskillMechanics' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Mechanics_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankMechanics" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yMechanics" value="(((@{intellect} + @{rankMechanics}) - abs(@{intellect} - @{rankMechanics})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gMechanics" value="((((@{intellect} + @{rankMechanics}) + abs(@{intellect} - @{rankMechanics})) / 2) - @{yMechanics})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yMechanics" value="(((@{Mechanics_characteristic} + @{rankMechanics}) - abs(@{Mechanics_characteristic} - @{rankMechanics})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gMechanics" value="((((@{intellect} + @{rankMechanics_characteristic}) + abs(@{Mechanics_characteristic} - @{rankMechanics})) / 2) - @{yMechanics})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -612,11 +657,20 @@
                                     <label data-i18n="medecineint">Medicine (Int)</label>
                                 </td>
                                 <td><input name='attr_careerskillMedicine' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Medicine_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankMedicine" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yMedicine" value="(((@{intellect} + @{rankMedicine}) - abs(@{intellect} - @{rankMedicine})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gMedicine" value="((((@{intellect} + @{rankMedicine}) + abs(@{intellect} - @{rankMedicine})) / 2) - @{yMedicine})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yMedicine" value="(((@{Medicine_characteristic} + @{rankMedicine}) - abs(@{Medicine_characteristic} - @{rankMedicine})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gMedicine" value="((((@{intellect} + @{rankMedicine_characteristic}) + abs(@{Medicine_characteristic} - @{rankMedicine})) / 2) - @{yMedicine})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -631,11 +685,20 @@
                                     <label data-i18n="operatingint">Operating (Int)</label>
                                 </td>
                                 <td><input name='attr_careerskillOperating' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Operating_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankOperating" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yOperating" value="(((@{intellect} + @{rankOperating}) - abs(@{intellect} - @{rankOperating})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gOperating" value="((((@{intellect} + @{rankOperating}) + abs(@{intellect} - @{rankOperating})) / 2) - @{yOperating})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yOperating" value="(((@{Operating_characteristic} + @{rankOperating}) - abs(@{Operating_characteristic} - @{rankOperating})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gOperating" value="((((@{intellect} + @{rankOperating_characteristic}) + abs(@{Operating_characteristic} - @{rankOperating})) / 2) - @{yOperating})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -650,11 +713,20 @@
                                     <label data-i18n="perceptioncun">Perception (Cun)</label>
                                 </td>
                                 <td><input name='attr_careerskillPerception' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Perception_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankPerception" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yPerception" value="(((@{cunning} + @{rankPerception}) - abs(@{cunning} - @{rankPerception})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gPerception" value="((((@{cunning} + @{rankPerception}) + abs(@{cunning} - @{rankPerception})) / 2) - @{yPerception})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yPerception" value="(((@{Perception_characteristic} + @{rankPerception}) - abs(@{Perception_characteristic} - @{rankPerception})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gPerception" value="((((@{cunning} + @{rankPerception_characteristic}) + abs(@{Perception_characteristic} - @{rankPerception})) / 2) - @{yPerception})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -669,11 +741,20 @@
                                     <label data-i18n="pilotingag">Piloting (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillPlanetary' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Planetary_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankPlanetary" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yPlanetary" value="(((@{agility} + @{rankPlanetary}) - abs(@{agility} - @{rankPlanetary})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gPlanetary" value="((((@{agility} + @{rankPlanetary}) + abs(@{agility} - @{rankPlanetary})) / 2) - @{yPlanetary})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yPlanetary" value="(((@{Planetary_characteristic} + @{rankPlanetary}) - abs(@{Planetary_characteristic} - @{rankPlanetary})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gPlanetary" value="((((@{agility} + @{rankPlanetary_characteristic}) + abs(@{Planetary_characteristic} - @{rankPlanetary})) / 2) - @{yPlanetary})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -688,11 +769,20 @@
                                     <label data-i18n="resiliencebr">Resilience (Br)</label>
                                 </td>
                                 <td><input name='attr_careerskillResilience' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Resilience_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankResilience" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yResilience" value="(((@{brawn} + @{rankResilience}) - abs(@{brawn} - @{rankResilience})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gResilience" value="((((@{brawn} + @{rankResilience}) + abs(@{brawn} - @{rankResilience})) / 2) - @{yResilience})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yResilience" value="(((@{Resilience_characteristic} + @{rankResilience}) - abs(@{Resilience_characteristic} - @{rankResilience})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gResilience" value="((((@{brawn} + @{rankResilience_characteristic}) + abs(@{Resilience_characteristic} - @{rankResilience})) / 2) - @{yResilience})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -707,11 +797,20 @@
                                     <label data-i18n="ridingag">Riding (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillRiding' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Riding_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankRiding" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yRiding" value="(((@{agility} + @{rankRiding}) - abs(@{agility} - @{rankRiding})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gRiding" value="((((@{agility} + @{rankRiding}) + abs(@{agility} - @{rankRiding})) / 2) - @{yRiding})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yRiding" value="(((@{Riding_characteristic} + @{rankRiding}) - abs(@{Riding_characteristic} - @{rankRiding})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gRiding" value="((((@{agility} + @{rankRiding_characteristic}) + abs(@{Riding_characteristic} - @{rankRiding})) / 2) - @{yRiding})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -726,11 +825,20 @@
                                     <label data-i18n="skulduggerycun">Skulduggery (Cun)</label>
                                 </td>
                                 <td><input name='attr_careerskillSkulduggery' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Skulduggery_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankSkulduggery" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_ySkulduggery" value="(((@{cunning} + @{rankSkulduggery}) - abs(@{cunning} - @{rankSkulduggery})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gSkulduggery" value="((((@{cunning} + @{rankSkulduggery}) + abs(@{cunning} - @{rankSkulduggery})) / 2) - @{ySkulduggery})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_ySkulduggery" value="(((@{Skulduggery_characteristic} + @{rankSkulduggery}) - abs(@{Skulduggery_characteristic} - @{rankSkulduggery})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gSkulduggery" value="((((@{cunning} + @{rankSkulduggery_characteristic}) + abs(@{Skulduggery_characteristic} - @{rankSkulduggery})) / 2) - @{ySkulduggery})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -745,11 +853,20 @@
                                     <label data-i18n="stealthag">Stealth (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillStealth' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Stealth_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankStealth" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yStealth" value="(((@{agility} + @{rankStealth}) - abs(@{agility} - @{rankStealth})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gStealth" value="((((@{agility} + @{rankStealth}) + abs(@{agility} - @{rankStealth})) / 2) - @{yStealth})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yStealth" value="(((@{Stealth_characteristic} + @{rankStealth}) - abs(@{Stealth_characteristic} - @{rankStealth})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gStealth" value="((((@{agility} + @{rankStealth_characteristic}) + abs(@{Stealth_characteristic} - @{rankStealth})) / 2) - @{yStealth})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -764,11 +881,20 @@
                                     <label data-i18n="streetwisecun">Streetwise (Cun)</label>
                                 </td>
                                 <td><input name='attr_careerskillStreetwise' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Streetwise_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankStreetwise" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yStreetwise" value="(((@{cunning} + @{rankStreetwise}) - abs(@{cunning} - @{rankStreetwise})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gStreetwise" value="((((@{cunning} + @{rankStreetwise}) + abs(@{cunning} - @{rankStreetwise})) / 2) - @{yStreetwise})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yStreetwise" value="(((@{Streetwise_characteristic} + @{rankStreetwise}) - abs(@{Streetwise_characteristic} - @{rankStreetwise})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gStreetwise" value="((((@{cunning} + @{rankStreetwise_characteristic}) + abs(@{Streetwise_characteristic} - @{rankStreetwise})) / 2) - @{yStreetwise})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -783,11 +909,20 @@
                                     <label data-i18n="survivalcun">Survival (Cun)</label>
                                 </td>
                                 <td><input name='attr_careerskillSurvival' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Survival_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankSurvival" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_ySurvival" value="(((@{cunning} + @{rankSurvival}) - abs(@{cunning} - @{rankSurvival})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gSurvival" value="((((@{cunning} + @{rankSurvival}) + abs(@{cunning} - @{rankSurvival})) / 2) - @{ySurvival})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_ySurvival" value="(((@{Survival_characteristic} + @{rankSurvival}) - abs(@{Survival_characteristic} - @{rankSurvival})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gSurvival" value="((((@{cunning} + @{rankSurvival_characteristic}) + abs(@{Survival_characteristic} - @{rankSurvival})) / 2) - @{ySurvival})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -802,11 +937,20 @@
                                     <label data-i18n="vigilancewill">Vigilance (Will)</label>
                                 </td>
                                 <td><input name='attr_careerskillVigilance' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Vigilance_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankVigilance" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yVigilance" value="(((@{willpower} + @{rankVigilance}) - abs(@{willpower} - @{rankVigilance})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gVigilance" value="((((@{willpower} + @{rankVigilance}) + abs(@{willpower} - @{rankVigilance})) / 2) - @{yVigilance})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yVigilance" value="(((@{Vigilance_characteristic} + @{rankVigilance}) - abs(@{Vigilance_characteristic} - @{rankVigilance})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gVigilance" value="((((@{willpower} + @{rankVigilance_characteristic}) + abs(@{Vigilance_characteristic} - @{rankVigilance})) / 2) - @{yVigilance})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -833,11 +977,20 @@
                                     <label data-i18n="arcanaint">Arcana (Int)</label>
                                 </td>
                                 <td><input name='attr_careerskillArcana' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Arcana_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankArcana" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yArcana" value="(((@{intellect} + @{rankArcana}) - abs(@{intellect} - @{rankArcana})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gArcana" value="((((@{intellect} + @{rankArcana}) + abs(@{intellect} - @{rankArcana})) / 2) - @{yArcana})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yArcana" value="(((@{Arcana_characteristic} + @{rankArcana}) - abs(@{Arcana_characteristic} - @{rankArcana})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gArcana" value="((((@{intellect} + @{rankArcana_characteristic}) + abs(@{Arcana_characteristic} - @{rankArcana})) / 2) - @{yArcana})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -852,11 +1005,20 @@
                                     <label data-i18n="divinewill">Divine (Will)</label>
                                 </td>
                                 <td><input name='attr_careerskillDivine' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Divine_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankDivine" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yDivine" value="(((@{willpower} + @{rankDivine}) - abs(@{willpower} - @{rankDivine})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gDivine" value="((((@{willpower} + @{rankDivine}) + abs(@{willpower} - @{rankDivine})) / 2) - @{yDivine})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yDivine" value="(((@{Divine_characteristic} + @{rankDivine}) - abs(@{Divine_characteristic} - @{rankDivine})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gDivine" value="((((@{willpower} + @{rankDivine_characteristic}) + abs(@{Divine_characteristic} - @{rankDivine})) / 2) - @{yDivine})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -871,11 +1033,20 @@
                                     <label data-i18n="primalcun">Primal (Cun)</label>
                                 </td>
                                 <td><input name='attr_careerskillPrimal' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Primal_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankPrimal" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yPrimal" value="(((@{cunning} + @{rankPrimal}) - abs(@{cunning} - @{rankPrimal})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gPrimal" value="((((@{cunning} + @{rankPrimal}) + abs(@{cunning} - @{rankPrimal})) / 2) - @{yPrimal})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yPrimal" value="(((@{Primal_characteristic} + @{rankPrimal}) - abs(@{Primal_characteristic} - @{rankPrimal})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gPrimal" value="((((@{cunning} + @{rankPrimal_characteristic}) + abs(@{Primal_characteristic} - @{rankPrimal})) / 2) - @{yPrimal})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -902,11 +1073,20 @@
                                     <label data-i18n="brawlbr">Brawl (Br)</label>
                                 </td>
                                 <td><input name='attr_careerskillBrawl' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Brawl_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankBrawl" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yBrawl" value="(((@{brawn} + @{rankBrawl}) - abs(@{brawn} - @{rankBrawl})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gBrawl" value="((((@{brawn} + @{rankBrawl}) + abs(@{brawn} - @{rankBrawl})) / 2) - @{yBrawl})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yBrawl" value="(((@{Brawl_characteristic} + @{rankBrawl}) - abs(@{Brawl_characteristic} - @{rankBrawl})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gBrawl" value="((((@{brawn} + @{rankBrawl_characteristic}) + abs(@{Brawl_characteristic} - @{rankBrawl})) / 2) - @{yBrawl})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -921,11 +1101,20 @@
                                     <label data-i18n="gunneryagi">Gunnery (Agi)</label>
                                 </td>
                                 <td><input name='attr_careerskillGunnery' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Gunnery_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankGunnery" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yGunnery" value="(((@{agility} + @{rankGunnery}) - abs(@{agility} - @{rankGunnery})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gGunnery" value="((((@{agility} + @{rankGunnery}) + abs(@{agility} - @{rankGunnery})) / 2) - @{yGunnery})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yGunnery" value="(((@{Gunnery_characteristic} + @{rankGunnery}) - abs(@{Gunnery_characteristic} - @{rankGunnery})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gGunnery" value="((((@{agility} + @{rankGunnery_characteristic}) + abs(@{Gunnery_characteristic} - @{rankGunnery})) / 2) - @{yGunnery})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -940,11 +1129,20 @@
                                     <label data-i18n="meleebr">Melee (Br)</label>
                                 </td>
                                 <td><input name='attr_careerskillMelee' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Melee_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankMelee" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yMelee" value="(((@{brawn} + @{rankMelee}) - abs(@{brawn} - @{rankMelee})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gMelee" value="((((@{brawn} + @{rankMelee}) + abs(@{brawn} - @{rankMelee})) / 2) - @{yMelee})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yMelee" value="(((@{Melee_characteristic} + @{rankMelee}) - abs(@{Melee_characteristic} - @{rankMelee})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gMelee" value="((((@{brawn} + @{rankMelee_characteristic}) + abs(@{Melee_characteristic} - @{rankMelee})) / 2) - @{yMelee})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -959,11 +1157,20 @@
                                     <label data-i18n="meleelightbr">Melee (Light)(Br)</label>
                                 </td>
                                 <td><input name='attr_careerskillMeleeLight' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_MeleeLight_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankMeleeLight" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yMeleeLight" value="(((@{brawn} + @{rankMeleeLight}) - abs(@{brawn} - @{rankMeleeLight})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gMeleeLight" value="((((@{brawn} + @{rankMeleeLight}) + abs(@{brawn} - @{rankMeleeLight})) / 2) - @{yMeleeLight})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yMeleeLight" value="(((@{MeleeLight_characteristic} + @{rankMeleeLight}) - abs(@{MeleeLight_characteristic} - @{rankMeleeLight})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gMeleeLight" value="((((@{brawn} + @{rankMeleeLight_characteristic}) + abs(@{MeleeLight_characteristic} - @{rankMeleeLight})) / 2) - @{yMeleeLight})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -978,11 +1185,20 @@
                                     <label data-i18n="meleeheavybr">Melee (Heavy)(Br)</label>
                                 </td>
                                 <td><input name='attr_careerskillMeleeHeavy' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_MeleeHeavy_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankMeleeHeavy" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yMeleeHeavy" value="(((@{brawn} + @{rankMeleeHeavy}) - abs(@{brawn} - @{rankMeleeHeavy})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gMeleeHeavy" value="((((@{brawn} + @{rankMeleeHeavy}) + abs(@{brawn} - @{rankMeleeHeavy})) / 2) - @{yMeleeHeavy})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yMeleeHeavy" value="(((@{MeleeHeavy_characteristic} + @{rankMeleeHeavy}) - abs(@{MeleeHeavy_characteristic} - @{rankMeleeHeavy})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gMeleeHeavy" value="((((@{brawn} + @{rankMeleeHeavy_characteristic}) + abs(@{MeleeHeavy_characteristic} - @{rankMeleeHeavy})) / 2) - @{yMeleeHeavy})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -997,11 +1213,20 @@
                                     <label data-i18n="rangedag">Ranged - Light (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillranged' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_ranged_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankranged" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yRanged" value="(((@{agility} + @{rankRanged}) - abs(@{agility} - @{rankRanged})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gRanged" value="((((@{agility} + @{rankRanged}) + abs(@{agility} - @{rankRanged})) / 2) - @{yRanged})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yRanged" value="(((@{ranged_characteristic} + @{rankRanged}) - abs(@{ranged_characteristic} - @{rankRanged})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gRanged" value="((((@{agility} + @{rankranged_characteristic}) + abs(@{ranged_characteristic} - @{rankRanged})) / 2) - @{yRanged})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1016,11 +1241,20 @@
                                     <label data-i18n="rangedlightag">Ranged - Light (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillLight' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Light_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankLight" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yLight" value="(((@{agility} + @{rankLight}) - abs(@{agility} - @{rankLight})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gLight" value="((((@{agility} + @{rankLight}) + abs(@{agility} - @{rankLight})) / 2) - @{yLight})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yLight" value="(((@{Light_characteristic} + @{rankLight}) - abs(@{Light_characteristic} - @{rankLight})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gLight" value="((((@{agility} + @{rankLight_characteristic}) + abs(@{Light_characteristic} - @{rankLight})) / 2) - @{yLight})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1035,11 +1269,20 @@
                                     <label data-i18n="rangedheavyag">Ranged - Heavy (Ag)</label>
                                 </td>
                                 <td><input name='attr_careerskillHeavy' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Heavy_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankHeavy" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yHeavy" value="(((@{agility} + @{rankHeavy}) - abs(@{agility} - @{rankHeavy})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gHeavy" value="((((@{agility} + @{rankHeavy}) + abs(@{agility} - @{rankHeavy})) / 2) - @{yHeavy})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yHeavy" value="(((@{Heavy_characteristic} + @{rankHeavy}) - abs(@{Heavy_characteristic} - @{rankHeavy})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gHeavy" value="((((@{agility} + @{rankHeavy_characteristic}) + abs(@{Heavy_characteristic} - @{rankHeavy})) / 2) - @{yHeavy})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1066,11 +1309,20 @@
                                     <label data-i18n="charmpr">Charm (Pr)</label>
                                 </td>
                                 <td><input name='attr_careerskillCharm' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Charm_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankCharm" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yCharm" value="(((@{presence} + @{rankCharm}) - abs(@{presence} - @{rankCharm})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gCharm" value="((((@{presence} + @{rankCharm}) + abs(@{presence} - @{rankCharm})) / 2) - @{yCharm})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yCharm" value="(((@{Charm_characteristic} + @{rankCharm}) - abs(@{Charm_characteristic} - @{rankCharm})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gCharm" value="((((@{presence} + @{rankCharm_characteristic}) + abs(@{Charm_characteristic} - @{rankCharm})) / 2) - @{yCharm})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1085,11 +1337,20 @@
                                     <label data-i18n="coercionwill">Coercion (Will)</label>
                                 </td>
                                 <td><input name='attr_careerskillCoercion' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Coercion_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankCoercion" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yCoercion" value="(((@{willpower} + @{rankCoercion}) - abs(@{willpower} - @{rankCoercion})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gCoercion" value="((((@{willpower} + @{rankCoercion}) + abs(@{willpower} - @{rankCoercion})) / 2) - @{yCoercion})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yCoercion" value="(((@{Coercion_characteristic} + @{rankCoercion}) - abs(@{Coercion_characteristic} - @{rankCoercion})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gCoercion" value="((((@{willpower} + @{rankCoercion_characteristic}) + abs(@{Coercion_characteristic} - @{rankCoercion})) / 2) - @{yCoercion})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1104,11 +1365,20 @@
                                     <label data-i18n="deceptioncun">Deception (Cun)</label>
                                 </td>
                                 <td><input name='attr_careerskillDeception' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Deception_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankDeception" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yDeception" value="(((@{cunning} + @{rankDeception}) - abs(@{cunning} - @{rankDeception})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gDeception" value="((((@{cunning} + @{rankDeception}) + abs(@{cunning} - @{rankDeception})) / 2) - @{yDeception})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yDeception" value="(((@{Deception_characteristic} + @{rankDeception}) - abs(@{Deception_characteristic} - @{rankDeception})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gDeception" value="((((@{cunning} + @{rankDeception_characteristic}) + abs(@{Deception_characteristic} - @{rankDeception})) / 2) - @{yDeception})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1123,11 +1393,20 @@
                                     <label data-i18n="leadershippre">Leadership (Pr)</label>
                                 </td>
                                 <td><input name='attr_careerskillLeadership' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Leadership_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankLeadership" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yLeadership" value="(((@{presence} + @{rankLeadership}) - abs(@{presence} - @{rankLeadership})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gLeadership" value="((((@{presence} + @{rankLeadership}) + abs(@{presence} - @{rankLeadership})) / 2) - @{yLeadership})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yLeadership" value="(((@{Leadership_characteristic} + @{rankLeadership}) - abs(@{Leadership_characteristic} - @{rankLeadership})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gLeadership" value="((((@{presence} + @{rankLeadership_characteristic}) + abs(@{Leadership_characteristic} - @{rankLeadership})) / 2) - @{yLeadership})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1142,11 +1421,20 @@
                                     <label data-i18n="negotiationpr">Negotiation (Pr)</label>
                                 </td>
                                 <td><input name='attr_careerskillNegotiation' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Negotiation_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankNegotiation" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yNegotiation" value="(((@{presence} + @{rankNegotiation}) - abs(@{presence} - @{rankNegotiation})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gNegotiation" value="((((@{presence} + @{rankNegotiation}) + abs(@{presence} - @{rankNegotiation})) / 2) - @{yNegotiation})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yNegotiation" value="(((@{Negotiation_characteristic} + @{rankNegotiation}) - abs(@{Negotiation_characteristic} - @{rankNegotiation})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gNegotiation" value="((((@{presence} + @{rankNegotiation_characteristic}) + abs(@{Negotiation_characteristic} - @{rankNegotiation})) / 2) - @{yNegotiation})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
@@ -1173,11 +1461,20 @@
                                     <label data-i18n="knowledgeint">Knowledge (Int)</label>
                                 </td>
                                 <td><input name='attr_careerskillKnowledge' type="checkbox" value="1"></td>
-                                <td><!--select--></td>
+                                <td>
+                                    <select name="attr_Knowledge_characteristic">
+                                        <option value="@{brawn}" data-i18n="brawn" selected='selected'>Brawn</option>
+                                        <option value="@{agility}" data-i18n="agility">Agility</option>
+                                        <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                        <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                        <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                        <option value="@{presence}" data-i18n="presence">Presence</option>
+                                    </select>
+</td>
                                 <td><input type="number" name="attr_rankKnowledge" max="6" min="0" value="0" /></td>
                                 <td>
-                                    <input class="sheet-yd" type="hidden" name="attr_yKnowledge" value="(((@{intellect} + @{rankKnowledge}) - abs(@{intellect} - @{rankKnowledge})) / 2)" disabled><span></span>
-                                    <input class="sheet-gd" type="hidden" name="attr_gKnowledge" value="((((@{intellect} + @{rankKnowledge}) + abs(@{intellect} - @{rankKnowledge})) / 2) - @{yKnowledge})" disabled><span></span>
+                                    <input class="sheet-yd" type="hidden" name="attr_yKnowledge" value="(((@{Knowledge_characteristic} + @{rankKnowledge}) - abs(@{Knowledge_characteristic} - @{rankKnowledge})) / 2)" disabled><span></span>
+                                    <input class="sheet-gd" type="hidden" name="attr_gKnowledge" value="((((@{intellect} + @{rankKnowledge_characteristic}) + abs(@{Knowledge_characteristic} - @{rankKnowledge})) / 2) - @{yKnowledge})" disabled><span></span>
                                 </td>
                                 <td>
                                     <div class="sheet-dice-icon"></div>
